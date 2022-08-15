@@ -13,6 +13,11 @@ interface ICreateCarsDTO {
 interface ICarsRepository {
   create(data: ICreateCarsDTO): Promise<Car>;
   findByLicensePlate(license_plate: string): Promise<Car>;
+  listAvailable(
+    brand?: string,
+    category_id?: string,
+    name?: string
+  ): Promise<Car[]>;
 }
 
 export { ICarsRepository, ICreateCarsDTO };
